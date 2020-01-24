@@ -831,11 +831,20 @@ transform:translate(-50%,0);
 #page2 .profile-pic{
 	display:inline-block;
 	float:right;
-	width:30%;
-	
+	width:30%;	
+}
+#page2 .team-pic{
+	display:inline-block;
+	float:right;
+	width:30%;	
 }
 .text-over{
 	width:65%;
+	display: inline-block;
+    margin-top: -6px;
+}
+.about{
+	width:100%;
 	display: inline-block;
     margin-top: -6px;
 }
@@ -954,6 +963,13 @@ h5.title{
 }
 @media screen and (max-width: 767px) {
 #page2 .profile-pic{
+	float:none;
+	display:block;
+	margin:auto;
+	min-height:100px;
+	width: 80%;
+}
+#page2 .team-pic{
 	float:none;
 	display:block;
 	margin:auto;
