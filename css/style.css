@@ -1,4 +1,18 @@
-
+.brand-frame{
+	width:22%;
+	height:100px;
+	display: inline-block;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    border: 1px solid;
+	}
+	.brand-frame:nth-child(4n){
+		margin-right:2%;
+	}
+.brand-frame img{
+	width: 100%;
+	height:100%;
+}
 .tab {
   overflow: hidden;
   width: 100%;
@@ -1004,6 +1018,16 @@ h5.title{
 
 @media screen and (max-width: 767px){
 	
+	.brand-frame{
+	width:44%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    border: 1px solid;
+	}
+	.brand-frame:nth-child(2n){
+		margin-right:2%;
+	}
+	
 	.carouselWrapper{
 		width:100%;
 		max-width:100%;
@@ -1026,8 +1050,9 @@ display: inline-block;
 
 .intro-content-text,.team-content{
 	display:inline-block;
+	padding-bottom: 15px;	
+}
+.brands{
+	margin-top:20px;
 }
 
-.intro-content-text{
- padding-bottom: 15px;	
-}
