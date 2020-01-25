@@ -44,13 +44,16 @@ function adjustImages(){
 		$('#projectThumbs .project').height(height2*(.33));
 	}
 	else if(width<768){
-		var margin=$("#projectThumbs a.project").css("margin-top");
-		var tabHeight=$(".tab").height();
-		var marginInt=parseFloat(margin);
-		var carouselBottom=$('#header').outerHeight(true)+parseFloat($('.carouselWrapper .bx-viewport').css("height"));
-		console.log("1-> "+$('#header').outerHeight(true)+ " ---> "+parseFloat($('.carouselWrapper .bx-viewport').css("height")));
-		var height3=height-(carouselBottom)-(2*marginInt)-50-tabHeight;
-		$('#projectThumbs .project').height(height3*(.5));
+		var imgWidth=$('#projectThumbs .project .project-image .content-fill').width();
+		//var margin=$("#projectThumbs a.project").css("margin-top");
+		//var tabHeight=$(".tab").height();
+		//var marginInt=parseFloat(margin);
+		//var carouselBottom=$('#header').outerHeight(true)+parseFloat($('.carouselWrapper .bx-viewport').css("height"));
+		//console.log("1-> "+$('#header').outerHeight(true)+ " ---> "+parseFloat($('.carouselWrapper .bx-viewport').css("height")));
+		//var height3=height-(carouselBottom)-(2*marginInt)-50-tabHeight;
+		$('#projectThumbs .project').height(imgWidth+30);
+		
+		//$('#projectThumbs .project .project-image .content-fill img').height(imgWidth);
 		
 	}
 	else{
