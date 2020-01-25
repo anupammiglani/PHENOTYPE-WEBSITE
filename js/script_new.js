@@ -40,24 +40,25 @@ function adjustImages(){
 		var margin=$("#projectThumbs a.project").css("margin-top");
 		var tabHeight=$(".tab").height();
 		var marginInt=parseFloat(margin);
-		height=height-(3*marginInt)-5-tabHeight;
-		$('#projectThumbs .project').height(height/3);
+		var height2=height-(3*marginInt)-5-tabHeight;
+		$('#projectThumbs .project').height(height2*(.33));
 	}
 	else if(width<768){
 		var margin=$("#projectThumbs a.project").css("margin-top");
 		var tabHeight=$(".tab").height();
 		var marginInt=parseFloat(margin);
-		var carouselBottom=$('.carouselWrapper').offset().top+parseFloat($('.carouselWrapper .bx-viewport').css("height"));
-		console.log("1-> "+$('.carouselWrapper').offset().top+ " ---> "+parseFloat($('.carouselWrapper .bx-viewport').css("height")));
-		height=height-(carouselBottom)-(2*marginInt)-50-tabHeight;
-		$('#projectThumbs .project').height(height/2);
+		var carouselBottom=$('#header').outerHeight(true)+parseFloat($('.carouselWrapper .bx-viewport').css("height"));
+		console.log("1-> "+$('#header').outerHeight(true)+ " ---> "+parseFloat($('.carouselWrapper .bx-viewport').css("height")));
+		var height3=height-(carouselBottom)-(2*marginInt)-50-tabHeight;
+		$('#projectThumbs .project').height(height3*(.5));
 		
 	}
-	else{var margin=$("#projectThumbs a.project").css("margin-top");
+	else{
+    var margin=$("#projectThumbs a.project").css("margin-top");
 	var marginInt=parseFloat(margin);
 	var tabHeight=$(".tab").height();
-	height=height-(2*marginInt)-5-tabHeight;	
-	$('#projectThumbs .project').height(height*(.5));
+	var height4=height-(2*marginInt)-5-tabHeight;	
+	$('#projectThumbs .project').height(height4*(.5));
 	}
 }
 $(document).ready(function(){
@@ -86,11 +87,6 @@ $(window).scroll(function(e){
 	
 	}
 });     
-
-
- window.addEventListener("resize",adjustImages);
- window.addEventListener("orientationChange",adjustImages);
- 
 });
 
 $(window).on("load",function(){
@@ -121,8 +117,14 @@ $('.carouselWrapper .bx-viewport .bxslider img').height(halfscreen/2.7);
 }
 setTimeout(function(){initSlider.reloadSlider()},100);
 }
-window.addEventListener("resize",customizeCarousel);
-window.addEventListener("orientationChange",customizeCarousel);
+window.addEventListener("resize",function(){
+	customizeCarousel();
+	adjustImages();
+	});
+window.addEventListener("orientationChange",function(){
+    customizeCarousel();
+	adjustImages();
+});
 customizeCarousel();
 adjustImages();
 });
