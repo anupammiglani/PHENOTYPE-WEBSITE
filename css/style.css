@@ -1,5 +1,5 @@
 .brand-frame{
-	width:22%;
+	width:16%;
 	height:100px;
 	display: inline-block;
     margin-left: 2%;
@@ -25,7 +25,14 @@
   
 }
 
+.education{
+	font-size:13px;
+}
 
+.title-content {
+	padding-bottom:30px;
+	line-height:1.0em;
+}
 
 .tab span {
   background-color: inherit;
@@ -61,7 +68,15 @@
 	padding-left: 4px;
     padding-right: 4px; 
 	}
-	
+
+	.title-content {
+	line-height:0.5em;
+}
+
+.tablinks{
+	font-size:13px; !important
+}
+
 }
 .tab span:hover {
   background-color: #ddd;
@@ -1041,11 +1056,13 @@ h5.title{
 .projectLink{
 	position:relative;
 	margin-top:10px;
+	padding:50px 0 50px 0;
 }
 .projectLink .rightLink{
 display: inline-block;
     position: absolute;
     right: 0;
+	letter-spacing:1px;
 }
 
 .intro-content-text,.team-content{

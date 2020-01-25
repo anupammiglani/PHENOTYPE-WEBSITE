@@ -153,7 +153,7 @@ $('.slideshow .gallery-thumbs-container .bx-viewport').height(halfscreen*.10);
 $('.slideshow .gallery-thumbs-container .bx-viewport img').height(halfscreen*.10);
 }
 else{
-	var halfscreen2=(halfscreen*.6)
+	var halfscreen2=(halfscreen*.9)
 $('.slideshow').css('height',halfscreen2/2);
 $('.slideshow .mainSlider .bx-viewport').height((halfscreen2*.68));
 $('.slideshow .mainSlider .bx-viewport img').height((halfscreen2*.68));
