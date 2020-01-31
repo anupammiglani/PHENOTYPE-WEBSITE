@@ -36,27 +36,20 @@ if(lazyloadImages.length == 0) {
 function adjustImages(){
 	var height=$(window).height();
 	var width=$(window).width();
+	console.log('height and width :' +height+"  "+ width);
 	if(width<=1024 && width>=768 && (width/height)<=1){
 		var margin=$("#projectThumbs a.project").css("margin-top");
 		var tabHeight=$(".tab").height();
 		var marginInt=parseFloat(margin);
 		var height2=height-(3*marginInt)-5-tabHeight;
 		$('#projectThumbs .project').height(height2*(.33));
-	}
-	else if(width<768){
+	}else if(width<768){
 		var imgWidth=$('#projectThumbs .project .project-image .content-fill').width();
-		//var margin=$("#projectThumbs a.project").css("margin-top");
-		//var tabHeight=$(".tab").height();
-		//var marginInt=parseFloat(margin);
-		//var carouselBottom=$('#header').outerHeight(true)+parseFloat($('.carouselWrapper .bx-viewport').css("height"));
-		//console.log("1-> "+$('#header').outerHeight(true)+ " ---> "+parseFloat($('.carouselWrapper .bx-viewport').css("height")));
-		//var height3=height-(carouselBottom)-(2*marginInt)-50-tabHeight;
 		$('#projectThumbs .project').height(imgWidth);
-		
-		//$('#projectThumbs .project .project-image .content-fill img').height(imgWidth);
-		
-	}
-	else{
+	}else if(height > 900 && width > 1680){
+		var imgWidth=$('#projectThumbs .project .project-image .content-fill').width();
+		$('#projectThumbs .project').height(imgWidth-20);
+	}else{
     var margin=$("#projectThumbs a.project").css("margin-top");
 	var marginInt=parseFloat(margin);
 	var tabHeight=$(".tab").height();
@@ -109,12 +102,16 @@ else{
 }
 var halfscreen=(($(window).height())-($('.carouselWrapper').offset().top)-10);
 console.log(halfscreen);
-if($(window).width()>1024){
+if($(window).height() > 900 && $(window).width() > 1680){
+	console.log('for slider')
+$('.carouselWrapper .bx-viewport').css('height',halfscreen);
+$('.carouselWrapper .bx-viewport .bxslider img').height(halfscreen-75);
+$('.carouselWrapper').css('width',halfscreen/(.8));
+}else if($(window).width() > 1024){
 $('.carouselWrapper .bx-viewport').css('height',halfscreen);
 $('.carouselWrapper .bx-viewport .bxslider img').height(halfscreen);
-$('.carouselWrapper').css('width',halfscreen/(.668));
-}
-else{
+$('.carouselWrapper').css('width',halfscreen/(.668));	
+}else{
 $('.carouselWrapper .bx-viewport').css('height',halfscreen/2.7);
 $('.carouselWrapper .bx-viewport .bxslider img').height(halfscreen/2.0);
 }

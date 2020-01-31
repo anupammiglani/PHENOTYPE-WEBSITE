@@ -74,16 +74,6 @@ $(window).on("load",function(){
         slideMargin: 10
         
     });
-	/*var thumbsSlider = $('#gallery-thumbs').bxSlider({
-	//mode: 'vertical',
-    minSlides: visibleThumbs,
-    minSlides: visibleThumbs,
-	slideWidth: 275,
-    slideMargin: 10,
-    moveSlides:1,
-    controls:false,
-    pager:false
-	});*/
 
 }
 function changeImage(change){
@@ -145,7 +135,14 @@ else{
 }
 var halfscreen=(($(window).height())-($('.slideshow').offset().top)-20);
 console.log(halfscreen);
-if($(window).width()>767){
+if($(window).height() > 900 && $(window).width() > 1680){
+$('.slideshow').css('height',halfscreen);
+$('.slideshow .mainSlider .bx-viewport').height(halfscreen*.70);
+$('.slideshow .mainSlider .bx-viewport img').height(halfscreen*.70);
+$('.slideshow .gallery-thumbs-container .bx-viewport').height(halfscreen*.08);
+$('.slideshow .gallery-thumbs-container .bx-viewport img').height(halfscreen*.08);
+}
+else if($(window).width()>1024){
 $('.slideshow').css('height',halfscreen);
 $('.slideshow .mainSlider .bx-viewport').height(halfscreen*.85);
 $('.slideshow .mainSlider .bx-viewport img').height(halfscreen*.85);
