@@ -966,6 +966,8 @@ h5.title{
   top: 0;
   right:0;
   bottom:0;
+  -ms-touch-action:none;
+  touch-action:none;
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */

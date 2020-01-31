@@ -119,11 +119,24 @@ $(".mainSlider .bxslider li").on("click",function(e){
 	$("#myModal  .modal-image").attr("src",imgPath);
 	$("#myModal").show();
 	document.addEventListener("keydown",callBack);
+	$("#myModal").on("swipeleft",function(event){
+		event.preventDefault();
+		changeImage(1);
+		
+	});
+	$("#myModal").on("swiperight",function(event){
+		event.preventDefault();
+		changeImage(-1);
+		
+	});
 });
 $(".close").on("click",function(){
 			
 			$("#myModal").hide();
 			document.removeEventListener("keydown",callBack);
+			$("#myModal").off("swipeleft");
+			$("#myModal").off("swiperight");
+			
 });
 function customizeCarousel(){
 if($(window).width()<=767){	
