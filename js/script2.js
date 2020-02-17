@@ -1,5 +1,5 @@
 $(document).ready(function(){
-$(".loader_wrapper").show();
+
 var viewType;
 if($(window).width>767){
 viewType="desktop";
@@ -37,7 +37,4 @@ viewType="mobile";
 window.addEventListener("resize", listControl);
 window.addEventListener("orientationChange", listControl);
 });
-$(window).on("load",function(){
-$(".loader_wrapper").fadeOut();	
-	
-});
+
