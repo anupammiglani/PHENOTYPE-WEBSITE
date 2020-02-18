@@ -1,3 +1,8 @@
+$(document).ready(function() {
+  $("a").each(function () {
+		  $(this).attr("data-ajax",false); });
+});
+
 $(window).on("load",function(){
 //SET THESE VARS
  if ($('.bxslider img').length > 0) {
@@ -111,7 +116,7 @@ function callBack(){
             changeImage(1);
         }
 	}
-$(".mainSlider .bxslider li").on("click",function(e){
+$(".mainSlider .bxslider li").on("click touchover",function(e){
 	e.stopPropagation();
 	var imgPath= $(e.currentTarget).find('img').attr("src");
 	$(e.currentTarget).addClass('activeslide');
@@ -179,3 +184,4 @@ window.addEventListener("resize", customizeCarousel);
 window.addEventListener("orientationChange", customizeCarousel);
 setTimeout(function(){customizeCarousel()},100);
 });
+

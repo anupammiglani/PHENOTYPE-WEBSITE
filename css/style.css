@@ -4,7 +4,6 @@
 	display: inline-block;
     margin-left: 2%;
     margin-bottom: 2%;
-    border: 1px solid;
 	}
 	.brand-frame:nth-child(4n){
 		margin-right:2%;
@@ -1049,7 +1048,6 @@ h5.title{
 	width:44%;
     margin-left: 2%;
     margin-bottom: 2%;
-    border: 1px solid;
 	}
 	.brand-frame:nth-child(2n){
 		margin-right:2%;
